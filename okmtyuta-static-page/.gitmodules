@@ -1,0 +1,6 @@
+[submodule "src/okmtyuta-react-lib"]
+	path = src/okmtyuta-react-lib
+	url = git@github.com:okmtyuta/okmtyuta-react-lib.git
+[submodule "okmtyuta-react-lib"]
+	path = okmtyuta-react-lib
+	url = git@github.com:okmtyuta/okmtyuta-react-lib.git
