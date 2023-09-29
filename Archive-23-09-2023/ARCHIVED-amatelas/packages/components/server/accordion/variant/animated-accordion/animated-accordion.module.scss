@@ -1,0 +1,44 @@
+@use '../../../../../frontend-utils/css/color.scss' as color;
+
+.animated-accordion {
+  width: 100%;
+  border: solid 1px color.$suoh;
+}
+.animated-accordion .head {
+  cursor: pointer;
+  display: block;
+  color: color.$suoh;
+  padding: 7px 20px;
+}
+.animated-accordion .head-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.animated-accordion .head-icon {
+  display: block;
+  position: relative;
+  transition: transform 0.25s;
+  fill: color.$suoh;
+}
+.animated-accordion .input {
+  display: none;
+}
+.animated-accordion .content {
+  height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  opacity: 0.5;
+  background-color: #fff;
+  transition:
+    padding 0.25s ease,
+    opacity 0.3s ease 0s;
+}
+.animated-accordion .input:checked + .head > .head-inner .head-icon {
+  transform: rotate(-180deg);
+}
+.animated-accordion .input:checked + .head + .content {
+  height: auto;
+  opacity: 1;
+  padding: 20px;
+}

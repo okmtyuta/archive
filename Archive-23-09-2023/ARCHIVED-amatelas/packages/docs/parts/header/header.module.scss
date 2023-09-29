@@ -1,0 +1,45 @@
+@use '../../../frontend-utils/css/color.scss' as color;
+@use '../../../frontend-utils/css/font.scss' as font;
+
+.outside {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header {
+  display: grid;
+  padding: 24px 24px;
+  grid-template:
+    'left center right'
+    / 3fr 0fr 5fr;
+  align-items: center;
+  background-color: white;
+  border-bottom: solid 1px rgba($color: color.$suoh, $alpha: 0.12);
+  z-index: 200;
+}
+.left {
+  grid-area: left;
+  color: color.$suoh;
+  font-family: font.$anton;
+}
+.center {
+  grid-area: center;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+  grid-area: right;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.github-icon {
+  height: 36px;
+}
+.youtube-icon {
+  height: 24px;
+}
+.zenn-icon {
+  height: 24px;
+}

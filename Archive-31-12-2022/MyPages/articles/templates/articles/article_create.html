@@ -1,0 +1,66 @@
+{% extends "global/extends/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<main class="main">
+
+  <div class="doubleFrame">
+
+    
+    <div class="doubleFrame_main">
+      
+      <h1>記事の新規作成</h1>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+
+            <div class="generic-form">
+              {{ form.title }}
+            </div>
+
+            <div>
+              {{ form.thumbnail }}
+            </div>
+
+            <div class="generic-form">
+              {{ form.caption }}
+            </div>
+
+            <div class="generic-form">
+              {{ form.author }}
+            </div>
+
+            <div class="generic-form">
+              {{ form.description }}
+            </div>
+
+            <div class="generic-form">
+              {{ form.body }}
+            </div>
+
+            <button type="submit">送信</button>
+        </form>
+        <p>{{ message }}</p>
+
+    </div>
+
+    <div class="doubleFrame_nav --stick">
+
+      <div class="headlineWithLeftLine">
+        Getting Started
+      </div>
+      <ul class="colList">
+        <li class="colListItem">INSTALLATION</li>
+        <li class="colListItem">CREATE APP</li>
+        <li class="colListItem">fjaklf</li>
+        <li class="colListItem">fjaklf</li>
+      </ul>
+
+    </div>
+
+
+  </div>
+
+</main>
+
+{% endblock %}

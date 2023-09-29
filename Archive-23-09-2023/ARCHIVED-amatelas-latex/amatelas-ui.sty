@@ -1,0 +1,64 @@
+\newcommand{\margin}[4]{
+  \usepackage[top=#1truemm,bottom=#2truemm,left=#3truemm,right=#4truemm]{geometry}
+}
+
+\newcommand{\TelasHeadingOne}[1]{
+  \vspace{12pt}
+  \par\noindent
+  {\fontsize{24pt}{24pt}\selectfont #1}
+  \vspace{6pt}
+  {\color[HTML]{e7e7eb}\hrule}
+  \vspace{6pt}
+}
+\newcommand{\TelasMathHeading}[1]{
+  \refstepcounter{section}
+  \vspace{24pt}
+  \par\noindent
+  {\fontsize{18pt}{18pt}\selectfont \arabic{section}\ \ #1}
+  \vspace{8pt}
+  {\color[HTML]{e7e7eb}\hrule}
+  \vspace{12pt}
+}
+
+\newcommand{\TelasHighlight}[1]{
+\tcbox[
+    on line,
+    boxsep=0pt,
+    left=2pt,
+    right=2pt,
+    top=3pt,
+    bottom=3pt,
+    colframe=ThemeColorPrimaryLighten,
+    colback=ThemeColorPrimaryLighten,  
+    highlight math style={enhanced}
+  ]{\textcolor{ThemeColorPrimary}{#1}}
+}
+
+\newcommand{\danger}[1]{
+  \begin{tcolorbox}[
+    colframe=ThemeColorPrimaryLighten,
+    colback=ThemeColorPrimaryLighten,
+    breakable
+  ]
+    {\color{ThemeColorPrimary}#1}
+  \end{tcolorbox}
+}
+\newcommand{\info}[1]{
+  \begin{tcolorbox}[
+    colframe=ThemeColorSecondaryLighten,
+    colback=ThemeColorSecondaryLighten,
+    breakable
+  ]
+    {\color{ThemeColorSecondary}#1}
+  \end{tcolorbox}
+}
+\newcommand{\success}[1]{
+  \begin{tcolorbox}[
+    colframe=ThemeColorTertiaryLighten,
+    colback=ThemeColorTertiaryLighten,
+    breakable
+  ]
+    {\color{ThemeColorTertiary}#1}
+  \end{tcolorbox}
+}
+

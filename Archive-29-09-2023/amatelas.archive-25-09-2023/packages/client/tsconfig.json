@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "declarationDir": "client/types"
+  },
+  "extends": "../../tsconfig.json",
+  "paths": {
+    "@src/*": ["src/*"]
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

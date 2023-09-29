@@ -1,0 +1,39 @@
+name: npm publish
+
+on:
+  push:
+    branches-ignore:
+      - '**'
+    tags:
+      - 'v*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@okmtyuta'
+          always-auth: true
+          cache: 'yarn'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build lib
+        run: yarn build:lib
+
+      - name: Publish
+        run: |
+          cp -r packages/client/client packages/dist/client
+          cp -r packages/server/server packages/dist/server
+          cd packages/dist
+          npm publish --access=public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

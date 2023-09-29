@@ -1,0 +1,148 @@
+@use '../../../../../frontend-utils/css/color.scss' as color;
+@use '../../../../../frontend-utils/css/font.scss' as font;
+
+$blur-outline-color: color.$accents-4;
+$focus-outline-color: color.$suoh;
+$focus-color: color.$suoh;
+$blur-color: color.$accents-3;
+
+$transition-time: 0.3s;
+$f-transition-time: 0.1s;
+$b-transition-time: 0.5s;
+
+$blur-placeholder-z-index: 100;
+$input-z-index: 200;
+$placeholder-background-z-index: 300;
+$focus-placeholder-z-index: 400;
+
+$placeholder-top: -12px;
+
+// 最もその側の要素
+.outlined-text-field {
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 50px;
+  width: 100%;
+}
+
+// inputのスタイル
+.outlined-text-field .input {
+  appearance: none;
+  font-size: 16px;
+
+  -webkit-appearance: none;
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 0 12px;
+  background-color: transparent;
+  border: $blur-outline-color solid 1px;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  z-index: $input-z-index;
+  box-sizing: border-box;
+}
+
+// focusされたときのinputのスタイル
+.outlined-text-field .input:focus {
+  border: $focus-outline-color solid 1px;
+  outline: none;
+  border-radius: 0;
+}
+
+// 入力されていないときのplaceholderのスタイル
+.outlined-text-field .input:placeholder-shown ~ .placeholder {
+  position: absolute;
+  color: $blur-color;
+  transition: all $transition-time;
+  font-size: 16px;
+  transform-origin: 0;
+  transform: scale(1);
+  top: 16px;
+  left: 0%;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: $blur-placeholder-z-index;
+}
+
+// focusされているときのplaceholderのスタイル
+.outlined-text-field .input:focus ~ .placeholder {
+  position: absolute;
+  color: $focus-color;
+  transition: all $transition-time;
+  transform-origin: 0;
+  transform: scale(0.75);
+  top: $placeholder-top;
+  left: 0;
+  z-index: $focus-placeholder-z-index;
+}
+
+// 入力があるときのplaceholderのスタイル
+.outlined-text-field .placeholder {
+  position: absolute;
+  color: $focus-color;
+  transition: all $transition-time;
+  transform-origin: 0;
+  transform: scale(0.75);
+  top: $placeholder-top;
+  left: 0;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: $focus-placeholder-z-index;
+}
+
+// ----------------
+// ----------------
+// ----------------
+// ----------------
+// ----------------
+
+// 入力がないときのplaceholder-backgroundのスタイル
+.outlined-text-field .input:placeholder-shown ~ .placeholder-background {
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  transition: all $b-transition-time;
+  transform-origin: 0;
+  transform: scale(0.75);
+  top: $placeholder-top;
+  left: 0;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: $placeholder-background-z-index;
+}
+
+// focusされているときのplaceholder-backgroundのスタイル
+.outlined-text-field .input:focus ~ .placeholder-background {
+  position: absolute;
+  background-color: white;
+  color: transparent;
+  transition: all $f-transition-time;
+  transform-origin: 0;
+  transform: scale(0.75);
+  top: $placeholder-top;
+  left: 0;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: $placeholder-background-z-index;
+}
+
+// 入力があるときのplaceholder-backgroundのスタイル
+.outlined-text-field .placeholder-background {
+  position: absolute;
+  background-color: white;
+  color: transparent;
+  transition: all $f-transition-time;
+  transform-origin: 0;
+  transform: scale(0.75);
+  top: $placeholder-top;
+  left: 0;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: $placeholder-background-z-index;
+}

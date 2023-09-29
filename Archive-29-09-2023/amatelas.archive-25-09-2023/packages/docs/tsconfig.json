@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declarationDir": "docs/types",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"]
+    }
+  },
+  "extends": "../../tsconfig.json",
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

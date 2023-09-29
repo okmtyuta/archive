@@ -1,0 +1,167 @@
+@use '../../function/mq.scss' as mq;
+
+$anton: 'Anton', sans-serif;
+$frederica: 'Fredericka the Great', cursive;
+$inconsolata: 'Inconsolata', monospace;
+$noto-sans: 'Noto Sans', sans-serif;
+$noto-sans-jp: 'Noto Sans JP', sans-serif;
+$noto-serif: 'Noto Serif', serif;
+$noto-serif-jp: 'Noto Serif JP', serif;
+
+$font-family: (
+  anton: $anton,
+  frederica: $frederica,
+  inconsolata: $inconsolata,
+  noto-sans: $noto-sans,
+  noto-sans-jp: $noto-sans-jp,
+  noto-serif: $noto-serif,
+  noto-serif-jp: $noto-serif-jp
+);
+
+// font sizes are defined, referenced to digital agency design system
+// https://www.figma.com/community/file/1255349027535859598/Design-System-1.3.3
+
+$title-size: (
+  'pc': 57px,
+  'tab': 57px,
+  'sp': 57px
+);
+$heading1-size: (
+  'pc': 45px,
+  'tab': 45px,
+  'sp': 45px
+);
+$heading2-size: (
+  'pc': 36px,
+  'tab': 32px,
+  'sp': 32px
+);
+$heading3-size: (
+  'pc': 32px,
+  'tab': 28px,
+  'sp': 28px
+);
+$heading4-size: (
+  'pc': 28px,
+  'tab': 24px,
+  'sp': 24px
+);
+$heading5-size: (
+  'pc': 24px,
+  'tab': 20px,
+  'sp': 20px
+);
+$heading6-size: (
+  'pc': 20px,
+  'tab': 16px,
+  'sp': 16px
+);
+$subtitle1-size: (
+  'pc': 16px,
+  'tab': 16px,
+  'sp': 16px
+);
+$subtitle2-size: (
+  'pc': 14px,
+  'tab': 14px,
+  'sp': 14px
+);
+$body1-size: (
+  'pc': 16px,
+  'tab': 16px,
+  'sp': 16px
+);
+$body2-size: (
+  'pc': 14px,
+  'tab': 14px,
+  'sp': 14px
+);
+$button-size: (
+  'pc': 14px,
+  'tab': 14px,
+  'sp': 14px
+);
+$caption-size: (
+  'pc': 12px,
+  'tab': 12px,
+  'sp': 12px
+);
+$overline-size: (
+  'pc': 10px,
+  'tab': 10px,
+  'sp': 10px
+);
+
+$font-size: (
+  'title': $title-size,
+  'heading-1': $heading1-size,
+  'heading-2': $heading2-size,
+  'heading-3': $heading3-size,
+  'heading-4': $heading4-size,
+  'heading-5': $heading5-size,
+  'heading-6': $heading6-size,
+  'subtitle-1': $subtitle1-size,
+  'subtitle-2': $subtitle2-size,
+  'body-1': $body1-size,
+  'body-2': $body2-size,
+  'button': $button-size,
+  'caption': $caption-size,
+  'overline': $overline-size
+);
+
+$title-weight: 700;
+$heading1-weight: 700;
+$heading2-weight: 400;
+$heading3-weight: 700;
+$heading4-weight: 700;
+$heading5-weight: 700;
+$heading6-weight: 700;
+$subtitle1-weight: 400;
+$subtitle2-weight: 500;
+$body1-weight: 400;
+$body2-weight: 400;
+$button-weight: 400;
+$caption-weight: 400;
+$overline-weight: 400;
+
+$font-weight: (
+  title-weight: $title-weight,
+  heading1-weight: $heading1-weight,
+  heading2-weight: $heading2-weight,
+  heading3-weight: $heading3-weight,
+  heading4-weight: $heading4-weight,
+  heading5-weight: $heading5-weight,
+  heading6-weight: $heading6-weight,
+  subtitle1-weight: $subtitle1-weight,
+  subtitle2-weight: $subtitle2-weight,
+  body1-weight: $body1-weight,
+  body2-weight: $body2-weight,
+  button-weight: $button-weight,
+  caption-weight: $caption-weight,
+  overline-weight: $overline-weight
+);
+
+@mixin responsive-font-size($font-type) {
+  @include mq.mq(pc) {
+    font-size: map-get($map: $font-type, $key: pc);
+  }
+  @include mq.mq(tab) {
+    font-size: map-get($map: $font-type, $key: tab);
+  }
+  @include mq.mq(sp) {
+    font-size: map-get($map: $font-type, $key: sp);
+  }
+}
+
+@mixin responsive-font($font-type) {
+  @include mq.mq(pc) {
+    font-size: map-get($map: $font-type, $key: pc);
+  }
+  @include mq.mq(tab) {
+    font-size: map-get($map: $font-type, $key: tab);
+  }
+  @include mq.mq(sp) {
+    font-size: map-get($map: $font-type, $key: sp);
+  }
+  font-weight: map-get($map: $font-weight, $key: $font-type);
+}

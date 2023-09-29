@@ -1,0 +1,50 @@
+{
+  "name": "@amatelas/tools",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./tools/index.umd.cjs",
+  "module": "./tools/index.js",
+  "types": "./tools/types/index.d.ts",
+  "author": "okmtyuta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okmtyuta/amatelas"
+  },
+  "files": [
+    "tools"
+  ],
+  "exports": {
+    ".": {
+      "require": "./tools/index.umd.cjs",
+      "import": "./tools/index.js",
+      "types": "./tools/types/index.d.ts"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "copy-theme": "./copy-theme.zsh",
+    "distribute-theme": "./distribute-theme.zsh",
+    "build": "vite build --outDir tools && tsc && pnpm copy-theme && pnpm distribute-theme",
+    "build--prod": "vite build --outDir tools && tsc",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.5"
+  }
+}

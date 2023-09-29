@@ -1,0 +1,75 @@
+@use '../../../../../frontend-utils/css/color.scss' as color;
+
+.static-accordion:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.static-accordion {
+  position: relative;
+  width: 100%;
+  box-shadow:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background-color: white;
+}
+.static-accordion:not(:first-child)::before {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  right: 0px;
+  height: 1px;
+  content: '';
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+// .static-accordion:not(:first-child):not(:has(.input:checked))::before {
+//   position: absolute;
+//   left: 0px;
+//   top: -1px;
+//   right: 0px;
+//   height: 1px;
+//   content: '';
+//   opacity: 1;
+//   background-color: rgba(0, 0, 0, 0.12);
+// }
+
+.static-accordion:has(.input:checked) {
+  box-shadow:
+    rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  // margin: 6px 0;
+}
+.static-accordion .head {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: block;
+  color: color.$suoh;
+  padding: 10px;
+}
+.static-accordion .head-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.static-accordion .head-icon {
+  display: block;
+  position: relative;
+  fill: color.$suoh;
+}
+.static-accordion .input {
+  display: none;
+}
+.static-accordion .content {
+  height: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+.static-accordion .input:checked + .head > .head-inner .head-icon {
+  transform: rotate(-180deg);
+}
+.static-accordion .input:checked + .head + .content {
+  height: auto;
+  padding: 10px;
+}

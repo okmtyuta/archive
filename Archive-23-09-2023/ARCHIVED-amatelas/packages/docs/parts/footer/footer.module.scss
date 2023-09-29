@@ -1,0 +1,16 @@
+@use '../../../frontend-utils/css/color.scss' as color;
+@use '../../../frontend-utils/css/font.scss' as font;
+
+.footer {
+  border-top: solid 1px rgba($color: color.$suoh, $alpha: 0.12);
+  margin: 12px auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.designed-by {
+  font-family: font.$anton;
+  color: color.$suoh;
+}

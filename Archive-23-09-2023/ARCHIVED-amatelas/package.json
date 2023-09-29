@@ -1,0 +1,100 @@
+{
+  "name": "@okmtyuta/amatelas",
+  "private": false,
+  "version": "0.3.21",
+  "type": "module",
+  "main": "./lib/index.umd.cjs",
+  "module": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "author": "okmtyuta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okmtyuta/amatelas"
+  },
+  "files": [
+    "lib",
+    "lib/index.css"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/index.umd.cjs",
+      "import": "./lib/index.js",
+      "types": "./lib/types/index.d.ts"
+    },
+    "./lib/server/server.js": {
+      "require": "./lib/server/server.umd.cjs",
+      "import": "./lib/server/server.js",
+      "types": "./lib/types/index.d.ts"
+    },
+    "./lib/client/client.js": {
+      "require": "./lib/client/client.umd.cjs",
+      "import": "./lib/client/client.js",
+      "types": "./lib/types/index.d.ts"
+    },
+    "./lib/index.css": {
+      "import": "./lib/index.css",
+      "require": "./lib/index.css"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:docs": "vite --config docs.vite.config.ts --outDir docs build && tsc",
+    "build:lib-server": "vite --config server.vite.config.ts --outDir lib/server build && tsc --project server.tsconfig.json",
+    "build:lib-client": "vite --config client.vite.config.ts --outDir lib/client build && tsc --project client.tsconfig.json",
+    "build:lib": "vite --outDir lib build && tsc",
+    "build:storybook": "storybook build",
+    "build": "vite --config docs.vite.config.ts --outDir docs build && tsc && vite --outDir lib build && tsc && storybook build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "typecheck": "tsc",
+    "fmt": "eslint --cache --fix ./ && prettier --write ./",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "vitest"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "katex": "^0.16.8",
+    "styled-components": "^6.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@storybook/addon-essentials": "^7.3.2",
+    "@storybook/addon-interactions": "^7.3.2",
+    "@storybook/addon-links": "^7.3.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.3.2",
+    "@storybook/react": "^7.3.2",
+    "@storybook/react-vite": "^7.3.2",
+    "@storybook/testing-library": "^0.2.0",
+    "@types/katex": "^0.16.2",
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-storybook": "^0.6.13",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "prettier": "^3.0.1",
+    "react-router-dom": "^6.15.0",
+    "sass": "^1.62.1",
+    "sort-by": "^1.2.0",
+    "storybook": "^7.3.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2",
+    "vitest": "^0.34.2"
+  }
+}

@@ -1,0 +1,41 @@
+@use '../../../../../../frontend-utils/css/color.scss' as color;
+@use '../../../../../../frontend-utils/css/font.scss' as font;
+@use '../shared/use-text-field.scss' as use-text-field;
+
+$blur-outline-color: color.$accents-4;
+$focus-outline-color: color.$suoh;
+$focus-color: color.$suoh;
+$blur-color: color.$accents-3;
+$transition-time: 0.3s;
+
+@include use-text-field.use-text-field();
+@include use-text-field.use-focus-underline();
+
+.text-field {
+  background-color: color.$accents-2;
+}
+
+.text-field .input {
+  height: 70%;
+  bottom: 0;
+  z-index: 100;
+  border-bottom: $blur-outline-color solid 1px;
+}
+
+.text-field .input:placeholder-shown + .placeholder {
+  z-index: 0;
+}
+
+.text-field .input:focus {
+  border-bottom: $blur-outline-color solid 1px;
+}
+
+.text-field .input:focus + .placeholder {
+  top: 2px;
+  z-index: 200;
+}
+
+.text-field .placeholder {
+  top: 2px;
+  z-index: 200;
+}

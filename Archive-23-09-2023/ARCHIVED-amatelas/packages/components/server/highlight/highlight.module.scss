@@ -1,0 +1,18 @@
+@use '../../../frontend-utils/css/color.scss' as color;
+
+.highlight {
+  padding: 0px 4px;
+  border-radius: 4px;
+}
+.primary {
+  color: color.$suoh;
+  background-color: rgba($color: color.$suoh, $alpha: 0.12);
+}
+.secondary {
+  color: color.$kompeki;
+  background-color: rgba($color: color.$kompeki, $alpha: 0.12);
+}
+.tertiary {
+  color: color.$moegi;
+  background-color: rgba($color: color.$moegi, $alpha: 0.12);
+}

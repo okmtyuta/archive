@@ -1,0 +1,23 @@
+name: format and lint
+
+on: [push]
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Format all
+        run: yarn format
+
+      - name: Lint all
+        run: yarn lint

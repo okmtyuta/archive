@@ -1,0 +1,28 @@
+version: "3"
+services:
+  okmtyuta-engineering-api:
+    container_name: "okmtyuta-engineering-api"
+    build:
+      context: .
+      dockerfile: ./packages/presentation/rest-api/okmtyuta-engineering-api/Dockerfile
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - ./packages/presentation/rest-api/okmtyuta-engineering-api:/okmtyuta/packages/presentation/rest-api/okmtyuta-engineering-api/
+    ports:
+      - ${OKMTYUTA_ENGINEERING_API_PORT}:${OKMTYUTA_ENGINEERING_API_PORT}
+
+  database:
+    image: postgres:14.6
+    tty: true
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT}
+    command: -p ${POSTGRES_PORT}
+

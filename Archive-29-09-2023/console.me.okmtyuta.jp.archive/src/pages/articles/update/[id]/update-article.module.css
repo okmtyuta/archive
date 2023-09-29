@@ -1,0 +1,13 @@
+.posts-create {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.content {
+  height: 400px;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

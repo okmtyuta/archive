@@ -1,0 +1,70 @@
+@use '../../../frontend-utils/css/color.scss' as color;
+
+$switch-width: 50px;
+$switch-height: 10px;
+$switch-ball-radius: 20px;
+
+$on-color: color.$suoh;
+$off-color: color.$accents-3;
+
+.switchArea {
+  position: relative;
+  width: $switch-width;
+  background: #fff;
+}
+
+.switchArea input[type='checkbox'] {
+  display: none;
+  z-index: 300;
+}
+
+.switchArea .background-label {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: $switch-height;
+  // border: 2px solid $off-color;
+  background-color: $off-color;
+  border-radius: 30px;
+  z-index: -200;
+}
+.switchArea .label {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: $switch-height;
+  // border: 2px solid $off-color;
+  border-radius: 30px;
+  background-color: transparent;
+  z-index: 300;
+}
+
+.switchArea input[type='checkbox']:checked + .background-label {
+  transition: all 0.2s;
+  border-color: $on-color;
+  background-color: rgba($color: $on-color, $alpha: 0.2);
+}
+
+.switchArea .swImg {
+  position: absolute;
+  width: $switch-ball-radius;
+  height: $switch-ball-radius;
+  background-color: white;
+  // border: $on-color solid 1px;
+  box-sizing: border-box;
+  top: calc(($switch-height / 2) - ($switch-ball-radius / 2));
+  left: 0;
+  border-radius: 26px;
+  transition: all 0.2s;
+  z-index: 100;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.switchArea input[type='checkbox']:checked ~ .swImg {
+  transform: translateX(calc($switch-width - $switch-ball-radius));
+  background-color: $on-color;
+}

@@ -1,0 +1,43 @@
+@use '@theme/color/color.scss' as color;
+@use '@theme/font/index.scss' as font;
+@use '../shared/use-focus-underline.scss' as *;
+
+@mixin use-standard-text-area() {
+  $blur-outline-color: color.$accents4;
+  $focus-outline-color: color.$suoh;
+  $focus-color: color.$suoh;
+  $blur-color: color.$accents3;
+
+  $placeholder-transition-time: 0.2s;
+
+  @include use-focus-underline();
+
+  min-height: 108px;
+
+  .input {
+    padding: 4px 12px;
+    height: 76%;
+    border-bottom: $blur-outline-color solid 1px;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  .input:placeholder-shown + .placeholder {
+    z-index: 0;
+  }
+
+  .input:focus {
+    border-bottom: $blur-outline-color solid 1px;
+  }
+
+  .input:focus + .placeholder {
+    top: 2px;
+    z-index: 200;
+  }
+
+  .placeholder {
+    transition: all $placeholder-transition-time;
+    top: 2px;
+    z-index: 200;
+  }
+}

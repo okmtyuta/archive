@@ -1,0 +1,6 @@
+@use '@theme/color/color.scss';
+
+.hr {
+  border-bottom: color.$accents3 solid 1px;
+  margin: 12px 0;
+}

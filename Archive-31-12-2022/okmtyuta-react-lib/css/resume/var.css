@@ -1,0 +1,14 @@
+:root {
+  --serif: "Hiragino Mincho ProN", "游明朝", serif;
+  --sans-serif: "Hiragino Kaku Gothic ProN", "游ゴシック","メイリオ", sans-serif;
+
+  --title-size: 32px;
+  --first-headline-size: 24px;
+  --second-headline-size: 20px;
+  --third-headline-size: 18px;
+  --body-size: 12px;
+  --caption-size : 10px;
+
+  --gray: #777;
+  --char-color: #333;
+}

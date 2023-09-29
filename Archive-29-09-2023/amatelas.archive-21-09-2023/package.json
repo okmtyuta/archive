@@ -1,0 +1,44 @@
+{
+  "name": "@okmtyuta/amatelas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "okmtyuta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okmtyuta/amatelas"
+  },
+  "scripts": {
+    "build:server": "yarn workspace @okmtyuta/amatelas-server build",
+    "build:client": "yarn workspace @okmtyuta/amatelas-client build",
+    "build:lib": "yarn workspace @okmtyuta/amatelas-server build && yarn workspace @okmtyuta/amatelas-client build",
+    "build:docs": "yarn workspace @amatelas/docs build",
+    "build:storybook": "yarn workspace @okmtyuta/amatelas-storybook build-storybook",
+    "build": "yarn build:lib && yarn build:docs && yarn build:storybook",
+    "dev:docs": "yarn workspace @amatelas/docs dev",
+    "storybook": "yarn workspace @okmtyuta/amatelas-storybook storybook",
+    "format": "prettier --write ./",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@amatelas/shared": "*",
+    "@okmtyuta/amatelas-client": "*",
+    "@okmtyuta/amatelas-server": "*"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-storybook": "^0.6.13",
+    "typescript": "^5.0.2",
+    "prettier": "^3.0.3"
+  }
+}

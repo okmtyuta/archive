@@ -1,0 +1,48 @@
+{
+  "name": "@okmtyuta/amatelas-client",
+  "private": false,
+  "version": "0.7.0",
+  "type": "module",
+  "main": "./client/index.umd.cjs",
+  "module": "./client/index.js",
+  "types": "./client/types/index.d.ts",
+  "author": "okmtyuta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okmtyuta/amatelas"
+  },
+  "files": [
+    "client"
+  ],
+  "exports": {
+    ".": {
+      "require": "./client/index.umd.cjs",
+      "import": "./client/index.js",
+      "types": "./client/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --outDir client && tsc",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}

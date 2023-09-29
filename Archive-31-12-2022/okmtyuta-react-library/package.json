@@ -1,0 +1,25 @@
+{
+  "name": "okmtyuta-react-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okmtyuta/okmtyuta-react-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okmtyuta/okmtyuta-react-library/issues"
+  },
+  "homepage": "https://github.com/okmtyuta/okmtyuta-react-library#readme",
+  "dependencies": {
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26"
+  }
+}

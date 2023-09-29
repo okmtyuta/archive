@@ -1,0 +1,22 @@
+@use '../../../../shared/constant/font/font.scss' as font;
+
+.title {
+  @include font.responsive-font-size(font.$title-size);
+  font-weight: bold;
+}
+.posted {
+  font-size: 14px;
+}
+.tags {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.tag {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+// .tag-icon {
+//   color: #d32f2f;
+// }

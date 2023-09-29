@@ -1,0 +1,19 @@
+@use './color.scss' as color;
+@use './font.scss' as font;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fredericka+the+Great&family=Inconsolata&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Noto+Serif&family=Noto+Serif+JP&display=swap');
+
+$default-color: color.$yokaniro;
+$default-font-family: font.$noto-sans;
+
+$default: (
+  'color': $default-color,
+  'font-family': $default-font-family
+);
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}

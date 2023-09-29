@@ -1,0 +1,52 @@
+\newcounter{envcounter}[section]
+\renewcommand{\theenvcounter}{\arabic{section}.\arabic{envcounter}}
+
+\newenvironment{dfn}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent{\textsc{{\large D}{\small EFINITION}}}\ 
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}
+  }
+\newenvironment{prop}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large P}{\small ROPOSITION}}
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}}
+\newenvironment{lem}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large L}{\small EMMA}}
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}}
+\newenvironment{thm}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large T}{\small HEOREM}}
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}}
+\newenvironment{cor}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large C}{\small OROLLARY}}
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}}
+\newenvironment{que}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large Q}{\small UESTION}}
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}}
+\newenvironment{eg}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large E}{\small XAMPLE}}
+  {\normalsize \arabic{section}.\arabic{envcounter}}\ #1}{\vspace{0.2cm}}
+\newenvironment{ans*}[1][]{
+  \vspace{0.2cm}
+  \noindent\textsc{{\large A}{\small NSWER}}}
+
+\newcounter{dsccounter}[envcounter]
+\newcommand{\dscitem}{
+  \refstepcounter{dsccounter}
+  \item[(\arabic{dsccounter})]
+}
+
+\newcommand{\thmref}[1]{\textbf{THEOREM \ref{#1}}}
+\newcommand{\propref}[1]{\textbf{PROPOSITION \ref{#1}}}
+\newcommand{\lemref}[1]{\textbf{LEMMA \ref{#1}}}

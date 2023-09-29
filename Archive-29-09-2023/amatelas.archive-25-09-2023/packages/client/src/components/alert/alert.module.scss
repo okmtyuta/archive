@@ -1,0 +1,69 @@
+@use '@theme/color/color.scss' as *;
+@use '@theme/padding/padding.scss' as *;
+@use '@theme/margin/margin.scss' as *;
+@use '@layer/layer.scss' as layer;
+
+.alerts {
+  position: -webkit-fixed;
+  position: fixed;
+  z-index: layer.$mid;
+  left: 0;
+  right: 0;
+  color: white;
+  fill: white;
+  gap: 12px;
+}
+
+.alert {
+  @include use-lg-padding();
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete {
+  flex-shrink: 0;
+}
+.delete-icon {
+  cursor: pointer;
+  user-select: none;
+}
+
+.position-top {
+  top: 0;
+}
+.position-bottom {
+  bottom: 0;
+}
+.position-left {
+  left: 0;
+}
+.position-right {
+  right: 0;
+}
+
+.label {
+  display: flex;
+  gap: 12px;
+  @include use-md-margin-bottom();
+}
+.label-content {
+  font-weight: bold;
+}
+
+.icon-icon {
+  flex-shrink: 0;
+}
+
+.info {
+  background-color: $info;
+}
+.warning {
+  background-color: $warning;
+}
+.success {
+  background-color: $success;
+}
+.danger {
+  background-color: $danger;
+}

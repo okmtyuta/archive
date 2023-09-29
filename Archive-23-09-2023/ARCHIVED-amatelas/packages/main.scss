@@ -1,0 +1,35 @@
+@use './frontend-utils/css/font.scss' as font;
+@import '../packages/frontend-utils/css/default.scss';
+
+* {
+  font-family: font.$noto-sans;
+}
+
+.example {
+  margin: 12px;
+}
+
+.example-text {
+}
+
+.multi-example-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.multi-example-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.clickable:active {
+  background-color: red;
+}
+
+.height-150px {
+  height: 150px;
+}

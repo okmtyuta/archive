@@ -1,0 +1,78 @@
+% third party packages
+\usepackage[top=20truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx, xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{braket}
+\usepackage{emath}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+
+\newtagform{bracket}{(}{)}
+\usetagform{bracket}
+
+\newcommand{\kakko}[1]{
+  \left( #1 \right)
+}
+\newcommand{\mkakko}[1]{
+  \left\{ #1 \right\}
+}
+\newcommand{\bkakko}[1]{
+  \left[ #1 \right]
+}
+\newcommand{\abs}[1]{
+  \left| #1 \right|
+}
+\newcommand{\norm}[1]{
+  \left|\left| #1 \right|\right|
+}
+
+\newcounter{envcounter}[section]
+
+\newenvironment{dfn}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent{\textsc{{\large D}{\small EFINITION}}}\ 
+  {\normalsize \arabic{section}.\arabic{envcounter}.}\ #1}{\vspace{0.2cm}
+  }
+\newenvironment{prop}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large P}{\small ROPOSITION}}
+  {\normalsize \arabic{section}.\arabic{envcounter}.}\ #1}{\vspace{0.2cm}}
+\newenvironment{lem}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large L}{\small EMMA}}
+  {\normalsize \arabic{section}.\arabic{envcounter}.}\ #1}{\vspace{0.2cm}}
+\newenvironment{thm}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large T}{\small HEOREM}}
+  {\normalsize \arabic{section}.\arabic{envcounter}.}\ #1}{\vspace{0.2cm}}
+\newenvironment{cor}[1][]{
+  \vspace{0.2cm}
+  \refstepcounter{envcounter}
+  \noindent\textsc{{\large C}{\small OROLLARY}}
+  {\normalsize \arabic{section}.\arabic{envcounter}.}\ #1}{\vspace{0.2cm}}
+
+\newcommand{\comb}[2]{{}_{#1}C_{#2}}
+
+
+\newcommand{\thmref}[1]{THEOREM \arabic{section}.\ref{#1}}
+\newcommand{\propref}[1]{PROPISITION \arabic{section}.\ref{#1}}
+
+\newcommand{\case}[1]{
+  \begin{dcases}
+    #1
+  \end{dcases}
+}
+
+\newcommand{\cov}{\mathrm{Cov}}

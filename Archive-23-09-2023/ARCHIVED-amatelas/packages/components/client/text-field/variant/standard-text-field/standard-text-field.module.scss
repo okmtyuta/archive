@@ -1,0 +1,75 @@
+@use '../../../../../frontend-utils/css/color.scss' as color;
+@use '../../../../../frontend-utils/css/font.scss' as font;
+
+$blur-outline-color: color.$accents-4;
+$focus-outline-color: color.$suoh;
+$focus-color: color.$suoh;
+$blur-color: color.$accents-3;
+
+$transition-time: 0.3s;
+
+.standard-text-field {
+  position: relative;
+  appearance: none;
+  height: 50px;
+  width: 50%;
+}
+
+.standard-text-field .input {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  height: 70%;
+  width: 100%;
+  position: absolute;
+  padding: 0 12px;
+  background-color: transparent;
+  border: none;
+  border-bottom: $blur-outline-color solid 1px;
+  outline: none;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.standard-text-field .input:placeholder-shown + .placeholder {
+  position: absolute;
+  color: $blur-color;
+  transition: all $transition-time;
+  font-size: 16px;
+  top: 16px;
+  left: 0%;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: 0;
+}
+
+.standard-text-field .input:focus {
+  border: none;
+  border-bottom: $blur-outline-color solid 1px;
+  outline: none;
+  border-radius: 0;
+}
+
+.standard-text-field .input:focus + .placeholder {
+  position: absolute;
+  color: $focus-color;
+  transition: all $transition-time;
+  transform: scale(0.75) translateX(-4px);
+  // font-size: 12px;
+  top: 2px;
+  left: 0;
+  z-index: 200;
+}
+
+.standard-text-field .placeholder {
+  position: absolute;
+  color: $focus-color;
+  transition: all $transition-time;
+  // font-size: 12px;
+  top: -9px;
+  margin: 0 10px;
+  padding: 0 2px;
+  z-index: 200;
+}

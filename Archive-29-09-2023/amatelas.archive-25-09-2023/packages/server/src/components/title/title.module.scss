@@ -1,0 +1,28 @@
+@use '@theme/font/index.scss' as font;
+@use '@theme/color/color.scss' as color;
+
+.title {
+  margin-top: 64px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: color.$accents3 solid 1px;
+}
+.title-label {
+  @include font.use-title-font-size();
+  @include font.use-font-weight(title);
+  margin-bottom: 12px;
+}
+.posted {
+  color: color.$accents6;
+  @include font.use-body2-font-size();
+}
+.posted-by-label {
+  margin-bottom: 12px;
+  color: color.$accents5;
+  @include font.use-body2-font-size();
+}
+.authors {
+  display: flex;
+  gap: 12px;
+  overflow: scroll;
+}

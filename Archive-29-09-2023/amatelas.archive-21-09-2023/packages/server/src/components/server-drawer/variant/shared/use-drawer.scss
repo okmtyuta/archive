@@ -1,0 +1,170 @@
+@use '../../../../../../shared/function/mq.scss' as mq;
+
+$transition-time: 0.5s;
+$blur-px: 2px;
+$sp-drawer-ratio: 70%;
+$tab-drawer-ratio: 50%;
+$pc-drawer-ratio: 30%;
+
+@mixin use-drawer($origin) {
+  .drawer .input:not(:checked) ~ .drawer-content {
+    overflow: scroll;
+    background-color: white;
+    position: fixed;
+    z-index: 1800;
+    transition: all $transition-time;
+
+    @if $origin == left {
+      top: 0;
+      height: 100vh;
+      @include mq.mq(sp) {
+        left: -$sp-drawer-ratio;
+        width: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        left: -$tab-drawer-ratio;
+        width: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        left: -$pc-drawer-ratio;
+        width: $pc-drawer-ratio;
+      }
+    } @else if $origin == bottom {
+      left: 0;
+      width: 100vw;
+      @include mq.mq(sp) {
+        bottom: -$sp-drawer-ratio;
+        height: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        bottom: -$tab-drawer-ratio;
+        height: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        bottom: -$pc-drawer-ratio;
+        height: $pc-drawer-ratio;
+      }
+    } @else if $origin == right {
+      top: 0;
+      height: 100vh;
+      @include mq.mq(sp) {
+        right: -$sp-drawer-ratio;
+        width: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        right: -$tab-drawer-ratio;
+        width: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        right: -$pc-drawer-ratio;
+        width: $pc-drawer-ratio;
+      }
+    } @else if $origin == top {
+      left: 0;
+      width: 100vw;
+      @include mq.mq(sp) {
+        top: -$sp-drawer-ratio;
+        height: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        top: -$tab-drawer-ratio;
+        height: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        top: -$pc-drawer-ratio;
+        height: $pc-drawer-ratio;
+      }
+    }
+  }
+  .drawer .input:checked ~ .drawer-content {
+    overflow: scroll;
+    background-color: white;
+    position: fixed;
+    z-index: 1800;
+    transition: all $transition-time;
+
+    @if $origin == left {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+      left: 0;
+      top: 0;
+      height: 100vh;
+      @include mq.mq(sp) {
+        width: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        width: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        width: $pc-drawer-ratio;
+      }
+    } @else if $origin == bottom {
+      box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.5);
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      @include mq.mq(sp) {
+        height: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        height: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        height: $pc-drawer-ratio;
+      }
+    } @else if $origin == right {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+      right: 0;
+      top: 0;
+      height: 100vh;
+      @include mq.mq(sp) {
+        width: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        width: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        width: $pc-drawer-ratio;
+      }
+    } @else if $origin == top {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+      left: 0;
+      top: 0;
+      width: 100vw;
+      @include mq.mq(sp) {
+        height: $sp-drawer-ratio;
+      }
+      @include mq.mq(tab) {
+        height: $tab-drawer-ratio;
+      }
+      @include mq.mq(pc) {
+        height: $pc-drawer-ratio;
+      }
+    }
+  }
+  .drawer .input:checked ~ .background {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: all $transition-time;
+    position: fixed;
+    z-index: 500;
+    backdrop-filter: blur($blur-px);
+
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .drawer .input:not(:checked) ~ .background {
+    transition: all $transition-time;
+    position: fixed;
+    z-index: 500;
+    pointer-events: none;
+
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .input {
+    display: none;
+  }
+}

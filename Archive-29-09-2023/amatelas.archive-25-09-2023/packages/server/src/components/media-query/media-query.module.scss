@@ -1,0 +1,26 @@
+@use '@theme/mq/mq.scss' as mq;
+
+.sp {
+  @include mq.mq(tab) {
+    display: none;
+  }
+  @include mq.mq(pc) {
+    display: none;
+  }
+}
+.tab {
+  @include mq.mq(sp) {
+    display: none;
+  }
+  @include mq.mq(pc) {
+    display: none;
+  }
+}
+.pc {
+  @include mq.mq(sp) {
+    display: none;
+  }
+  @include mq.mq(tab) {
+    display: none;
+  }
+}

@@ -1,0 +1,61 @@
+@use '@theme/color/color.scss' as color;
+@use '@theme/font/index.scss' as font;
+
+.pagination {
+  margin: 64px 0;
+}
+
+.pagination-both {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.pagination-only-next {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.pagination-only-previous {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pagination-none {
+  display: none;
+}
+
+.next {
+  justify-content: flex-end;
+}
+.previous {
+  justify-content: flex-start;
+}
+
+.navigation-next {
+  width: 24px;
+}
+.navigation-previous {
+  rotate: 180deg;
+  width: 24px;
+}
+
+.next-caption {
+  margin-right: 24px;
+  color: color.$accents5;
+  @include font.use-body2-font-size();
+}
+.previous-caption {
+  margin-left: 24px;
+  color: color.$accents5;
+  @include font.use-body2-font-size();
+}
+
+.next-label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.previous-label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}

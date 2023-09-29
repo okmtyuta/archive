@@ -1,0 +1,17 @@
+@use '../../../../../../frontend-utils/css/color.scss' as color;
+@use '../../../variant/shared/use-ripple.module.scss' as use-ripple;
+
+.filled-button {
+  border: none;
+  outline: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: inherit;
+  background-color: rgba($color: color.$suoh, $alpha: 0.12);
+  color: color.$suoh;
+
+  @include use-ripple.use-ripple();
+}

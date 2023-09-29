@@ -1,0 +1,12 @@
+.env
+db.sqlite3
+staticfiles
+*/migrations/*
+!*/migrations/__init__.py
+memo.txt
+media
+*/media/
+.DS_STORE
+Memo.md
+*/__pycache__/
+.vscode/

@@ -1,0 +1,106 @@
+/* For PC */
+@media screen and (min-width: 1025px) {
+  header {
+    display: grid;
+    grid-template: 
+      "header-logo header-logo"   1fr
+      "header-menu header-utils" 1fr /
+      6fr         2fr
+    ;
+    grid-area: header;
+    font: var(--bodyFont);
+  }
+  .header-logo {
+    color: var(--themeColor);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-area: header-logo;
+    font-size: 20px;
+  }
+  .header-utils {
+    grid-area: header-utils;
+    color: var(--defaultCharColor);
+  }
+  .header-menu {
+    grid-area: header-menu;
+    color: var(--defaultCharColor);
+  }
+  .header-menu-item {
+    border-bottom: var(--lighterGray) 1px solid;
+    box-sizing: border-box;
+    justify-content: center;
+    font: var(--subBodyFont);
+  }
+}
+
+/* For tablet */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .header {
+    display: grid;
+    grid-template: 
+      "header-logo header-utils"  1fr
+      "header-menu header-menu"   1fr/
+      6fr         4fr  
+    ;
+    grid-area: header;
+    font: var(--bodyFont);
+  }
+  .header-logo {
+    color: var(--themeColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: header-logo;
+    font-size: 20px;
+  }
+  .header-menu {
+    grid-area: header-menu;
+  }
+  .header-utils {
+    grid-area: header-utils;
+  }
+  .header-menu-item {
+    justify-content: center;
+    font: var(--subBodyFont);
+  }
+  .header-menu-item:hover {
+    background-color: var(--defaultWhite);
+    justify-content: center;
+  }
+}
+
+/* For mobile */
+@media (max-width: 599px) {
+  .header {
+    display: grid;
+    grid-template: 
+      "header-logo header-utils"  1fr
+      "header-menu header-menu"   1fr/
+      6fr         6fr  
+    ;
+    grid-area: header;
+    font: var(--bodyFont);
+  }
+  .header-logo {
+    color: var(--themeColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: header-logo;
+    font-size: 16px;
+  }
+  .header-menu {
+    grid-area: header-menu;
+  }
+  .header-utils {
+    grid-area: header-utils;
+  }
+  .header-menu-item {
+    justify-content: center;
+    font: var(--subBodyFont);
+  }
+  .header-menu-item:hover {
+    background-color: var(--defaultWhite);
+  }
+}

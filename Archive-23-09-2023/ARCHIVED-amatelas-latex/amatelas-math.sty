@@ -1,0 +1,42 @@
+\newcommand{\kakko}[1]{
+  \left( #1 \right)
+}
+\newcommand{\mkakko}[1]{
+  \left\{ #1 \right\}
+}
+\newcommand{\bkakko}[1]{
+  \left[ #1 \right]
+}
+\newcommand{\abs}[1]{
+  \left| #1 \right|
+}
+\newcommand{\norm}[1]{
+  \left|\left| #1 \right|\right|
+}
+
+\newcommand{\comb}[2]{{}_{#1}C_{#2}}
+\newcommand{\cov}{\mathrm{Cov}}
+\newcommand{\mat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\dmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\diff}[3][1]{
+  \ifthenelse{\equal{#1}{1}}{
+    \bunsuu{d #2}{d #3}
+  }{
+    \bunsuu{d^#1 #2}{d #3^#1}
+  }
+}
+\newcommand{\pdiff}[3][1]{
+  \ifthenelse{\equal{#1}{1}}{
+    \bunsuu{\partial #2}{\partial #3}
+  }{
+    \bunsuu{\partial^#1 #2}{\partial #3^#1}
+  }
+}
+\newcommand{\as}{\quad a.s.}
+\newcommand{\id}[1]{\mathrm{id}_{#1}}
+
+\newcommand{\case}[1]{
+  \begin{dcases}
+    #1
+  \end{dcases}
+}

@@ -1,0 +1,58 @@
+@use '../../../frontend-utils/css/font.scss' as font;
+
+.code {
+  background-color: #16160e;
+  padding: 12px 24px;
+  border-radius: 4px;
+  overflow: scroll;
+}
+.token {
+  font-family: font.$inconsolata;
+}
+.property {
+  color: #f8b862;
+}
+.reserved {
+  color: #a0d8ef;
+  font-style: italic;
+}
+.string {
+  color: #badcad;
+}
+.type {
+  color: #f0cfa0;
+}
+.keyword {
+  color: #e198b4;
+}
+.number {
+  color: #f8b862;
+}
+.operator {
+  color: #a0d8ef;
+}
+.punctuation {
+  color: #a0d8ef;
+}
+.bracket {
+  color: #f0cfa0;
+}
+.normal {
+  color: white;
+}
+.function {
+  color: #2ca9e1;
+}
+.regexp {
+  color: #f8b862;
+}
+.comment {
+  color: gray;
+  font-style: italic;
+}
+.space {
+  // background-color: #595857;
+}
+.tag {
+  background-color: red;
+}
